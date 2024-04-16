@@ -1,0 +1,2 @@
+from .sig_mat_minhash import generate_sig_matrix as gen_sig_mat_min_hash
+from .sig_mat_simhash import generate_hash, generate_sig_matrix as gen_sig_mat_sim_hash
