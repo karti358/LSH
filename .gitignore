@@ -162,7 +162,6 @@ cython_debug/
 test.py
 .vscode/
 .vscode/settings.json
-data/
-data/*.csv
-raw_data/
 notebooks/
+/data
+/raw_data
