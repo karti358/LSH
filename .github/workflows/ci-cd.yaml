@@ -36,7 +36,7 @@ jobs:
       # if: github.ref == 'refs/heads/main' && job.status == 'success'
       run: |
 
-        cat /.ssh/known_hosts
+        ls
         # ssh-keyscan -H ssh.pythonanywhere.com >> ~/.ssh/known_hosts
         # ssh -i /home/kartikyanigar/.ssh/id_rsa kartikyanigar@ssh.pythonanywhere.com "cd /home/kartikyanigar/lsh && git pull"
 
