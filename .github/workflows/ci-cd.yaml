@@ -35,9 +35,10 @@ jobs:
       #   HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
       # if: github.ref == 'refs/heads/main' && job.status == 'success'
       run: |
+        mkdir .ssh
+        touch .ssh/id_rsa
         echo "${{ secrets.PYTHONANYWHERE }}" >> ~/.ssh/id_rsa
         cat ~/.ssh/id_rsa
-        # ssh -i /home/kartikyanigar/.ssh/id_rsa kartikyanigar@ssh.pythonanywhere.com "cd /home/kartikyanigar/lsh && git pull"
 
       
 
