@@ -39,9 +39,11 @@ jobs:
         touch ~/.ssh/id_rsa
         echo "${{ secrets.PYTHONANYWHERE }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh kartikyanigar@ssh.pythonanywhere.com
-        cd lsh
-        git
+        ssh-keyscan -H ssh.pythonanywhere.com >> ~/.ssh/known_hosts
+        chmod 644 ~/.ssh/known_hosts
+        cat ~/.ssh/id_rsa
+        ssh -i ~/.ssh/id_rsa kartikyanigar@ssh.pythonanywhere.com
+
 
 
       
