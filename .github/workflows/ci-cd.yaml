@@ -35,8 +35,10 @@ jobs:
       #   HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
       # if: github.ref == 'refs/heads/main' && job.status == 'success'
       run: |
-        git remote add pythonanywhere kartikyanigar@ssh.pythonanywhere.com:/home/kartikyanigar/lsh/
-        git push -u pythonanywhere main
-      
+
+        cat /.ssh/known_hosts
+        # ssh-keyscan -H ssh.pythonanywhere.com >> ~/.ssh/known_hosts
+        # ssh -i /home/kartikyanigar/.ssh/id_rsa kartikyanigar@ssh.pythonanywhere.com "cd /home/kartikyanigar/lsh && git pull"
 
       
+
