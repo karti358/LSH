@@ -23,7 +23,10 @@ def index():
                 return render_template("index.html", response=response)
             elif request.json:
                 response = api_response(r_matrix, request.json)
-                return jsonify(response)
+                return jsonify({
+                    "predicted rating" : response
+                    }
+                )
 
         except Exception as e:
             print(e)
