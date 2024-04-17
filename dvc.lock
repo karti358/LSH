@@ -1,0 +1,28 @@
+schema: '2.0'
+stages:
+  load_data:
+    cmd: python recommender_algos/data_generation/load_data.py --config=params.yaml
+    deps:
+    - path: data/movie_ratings.csv
+      hash: md5
+      md5: abdb3054becb81bcbd3e3fb5ea536f09
+      size: 246917589
+    - path: recommender_algos/data_generation/get_data.py
+      hash: md5
+      md5: c7a7f3d308059893d24db18ef5ed086f
+      size: 622
+    - path: recommender_algos/data_generation/load_data.py
+      hash: md5
+      md5: 732bc25c044579890adf55911d5de096
+      size: 617
+  train_and_evaluate:
+    cmd: python recommender_algos/recommendations/collaborative_filtering.py --config=params.yaml
+    deps:
+    - path: data/movie_ratings.csv
+      hash: md5
+      md5: abdb3054becb81bcbd3e3fb5ea536f09
+      size: 246917589
+    - path: recommender_algos/recommendations/collaborative_filtering.py
+      hash: md5
+      md5: 90cfe7e73c525b80de995d1e284bc53b
+      size: 1934

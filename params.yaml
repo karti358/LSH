@@ -1,0 +1,14 @@
+base:
+  project: Group Recommendation with LSH
+  random_state: 42
+
+data_source:
+  s3_source: raw_data/Netflix_Dataset_Rating.csv
+
+load_data:
+  dataset_csv: data/movie_ratings.csv
+
+recommend:
+  itemId: 0
+  userId: 0
+  normal: True

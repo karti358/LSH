@@ -1,0 +1,13 @@
+stages:
+  load_data:
+    cmd: python recommender_algos/data_generation/load_data.py --config=params.yaml
+    deps:
+    - recommender_algos/data_generation/get_data.py
+    - recommender_algos/data_generation/load_data.py
+    - data/movie_ratings.csv
+
+  train_and_evaluate:
+    cmd: python recommender_algos/recommendations/collaborative_filtering.py --config=params.yaml
+    deps:
+    - data/movie_ratings.csv
+    - recommender_algos/recommendations/collaborative_filtering.py
