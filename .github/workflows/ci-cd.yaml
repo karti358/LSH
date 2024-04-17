@@ -37,8 +37,12 @@ jobs:
       run: |
         mkdir -p ~/.ssh
         touch ~/.ssh/id_rsa
-        echo "${{ secrets.PYTHONANYWHERE }}" > ~/.ssh/id_rsa
+        
+        chmod 700 ~/.ssh
         chmod 600 ~/.ssh/id_rsa
+
+        echo "${{ secrets.PYTHONANYWHERE }}" > ~/.ssh/id_rsa
+        
         ssh-keyscan -H ssh.pythonanywhere.com >> ~/.ssh/known_hosts
         chmod 644 ~/.ssh/known_hosts
         cat ~/.ssh/id_rsa
