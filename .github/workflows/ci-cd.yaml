@@ -35,9 +35,7 @@ jobs:
       #   HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
       # if: github.ref == 'refs/heads/main' && job.status == 'success'
       run: |
-        ssh-keyscan -H ssh.pythonanywhere.com >> ~/.ssh/known_hosts
-        cd .ssh
-        cat known_hosts
+        echo "${{ secrets.PYTHONANYWHERE }}"
         # ssh -i /home/kartikyanigar/.ssh/id_rsa kartikyanigar@ssh.pythonanywhere.com "cd /home/kartikyanigar/lsh && git pull"
 
       
