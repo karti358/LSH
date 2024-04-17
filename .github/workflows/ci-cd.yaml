@@ -35,10 +35,12 @@ jobs:
       #   HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
       # if: github.ref == 'refs/heads/main' && job.status == 'success'
       run: |
-        mkdir .ssh
-        touch .ssh/id_rsa
-        echo "${{ secrets.PYTHONANYWHERE }}" >> ~/.ssh/id_rsa
+        mkdir -p ~/.ssh
+        touch ~/.ssh/id_rsa
+        echo "${{ secrets.PYTHONANYWHERE }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
         cat ~/.ssh/id_rsa
+
 
       
 
